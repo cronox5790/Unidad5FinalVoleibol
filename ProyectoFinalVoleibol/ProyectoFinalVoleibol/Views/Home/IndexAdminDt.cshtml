@@ -1,0 +1,45 @@
+﻿
+@{ Layout = "_Layout"; }
+<main>
+    <section class="admin">
+        @if (User.IsInRole("DirectorTecnico"))
+        {
+<h1>Bienvenido</h1>
+                <h3>@User.Claims.FirstOrDefault(x => x.Type == "Nombre").Value</h3>
+                                <form id="perfil">
+                                    <br />
+                                    <a href="~/Home/ListaDeIntegrantes/@(int.Parse(User.Claims.FirstOrDefault(x=>x.Type=="Id").Value))">
+                                        Ver su grupo de Integrantes
+                                    </a>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <a href="/Home/CerrarSesion">
+                                        Cerrar sesión
+                                    </a>
+                                    <br />
+                                    <br />
+                                    <br />
+                                </form>}
+        @if (User.IsInRole("Administrador"))
+        {
+<form >
+    <h1>Bienvenido</h1>
+    <h3>@User.Claims.FirstOrDefault(x => x.Type == "Nombre").Value</h3>
+    <br />
+    <a href="~/Home/ListaDeDt">
+        Ver lista de los directores técnicos
+    </a>
+    <br />
+    <br />
+    <br />
+    <a href="~/Home/CerrarSesion">
+        Cerrar sesión
+    </a>
+    <br />
+    <br />
+    <br />
+</form>}
+    </section>
+</main>

@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+
+<h2 class="a">Cambiar contraseña</h2>
+
+<section class="is">
+    <form  method="post" action="~/Home/CambiarContraseña" onsubmit="submit()">
+        <input type="text" style="visibility:hidden" name="correo" value="@User.Claims.FirstOrDefault(x => x.Type == "Correo electronico").Value"/><br />
+        <input type="password" name="contraseñaNueva1" placeholder="Ingresar contraseña nueva" required /><br />
+        <input type="password" required  name="contraseñaNueva2" placeholder="Confirme su contraseña nueva"/><br />
+        @Html.ValidationSummary()
+        <input class="boton" type="submit" value="Cambiar Contraseña" />
+        
+    </form>
+
+</section>
+
+<script>
+    function submit(){
+        alert('La contraseña fue actualizada con exito');
+    }
+</script>

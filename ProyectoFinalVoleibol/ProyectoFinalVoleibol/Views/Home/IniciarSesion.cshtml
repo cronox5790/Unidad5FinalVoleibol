@@ -1,0 +1,29 @@
+﻿@model ProyectoFinalVoleibol.Models.Usuario
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ Layout = "_LayoutInicioS"; }
+
+
+<section class="is">
+    <form method="post" action="~/Home/IniciarSesion">
+        <h2 class="a">Iniciar sesión</h2>
+        <div class="field-group">
+            <label>Correo Electónico:</label><br />
+            <input type="email" asp-for="Correo" required /><br />
+        </div>
+
+        <label>Contraseña:</label><br />
+        <input type="password" asp-for="Contraseña" required /><br />
+
+        @Html.ValidationSummary()
+
+        <div>
+            <input class="boton" type="submit" value="Entrar" /><br />
+        </div>
+        <div>
+            <p>No tienes una cuenta? <a href="Registrar">Crea tu cuenta</a></p>
+            <p>Olvidaste la contraseña? <a href="RecuperarContraseña">click aqui para recuperar contraseña</a></p>
+        </div>
+
+    </form>
+   
+</section> 

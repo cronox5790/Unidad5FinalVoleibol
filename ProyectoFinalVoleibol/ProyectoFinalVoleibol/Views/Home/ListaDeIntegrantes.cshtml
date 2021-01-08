@@ -1,0 +1,48 @@
+﻿@model ProyectoFinalVoleibol.Models.Directortecnico
+@{ Layout = "_LayoutAdmin"; }
+<main>
+    <section id="integrantestable">
+        <h1>Lista de integrantes del director tecnico @Model.Nombre</h1>
+        <a href="~/Home/AgregarIntegrante/@Model.Id"><b>Agregar nuevo integrante</b></a>
+        <table id="tablas">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Posición</th>
+
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var integrantes in Model.Integrantes)
+                {
+                <tr>
+                    <td>@integrantes.Nombre</td>
+                    <td>@integrantes.Posicion</td>
+
+                    <td>
+                        <a href="~/Home/EditarIntegrante/@integrantes.Id">Editar</a>
+                    </td>
+                    <td>
+                        <a href="#" onclick="eliminar(@integrantes.Id)">Eliminar</a>
+                    </td>
+                </tr>
+}
+            </tbody>
+        </table>
+        @if (User.IsInRole("DirectorTecnico"))
+        {
+<a href="~/Home/IndexAdminDt">"><b>Cancelar</b></a> }
+else if (User.IsInRole("Administrador"))
+{
+<a href="~/Home/ListaDeDt/@Model.Id"><b>Cancelar</b></a>}
+    </section>
+    <form method="post" action="~/Home/EliminarIntegrante">
+        <input type="number" name="Id" id="IdIntegrante" hidden />
+    </form>
+    <script>function eliminar(id) {
+    document.getElementById("IdIntegrante").value = id;
+            document.querySelector("form").submit();
+        }</script>
+</main>

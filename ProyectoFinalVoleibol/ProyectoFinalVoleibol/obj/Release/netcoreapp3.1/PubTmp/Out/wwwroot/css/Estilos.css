@@ -1,0 +1,375 @@
+﻿html {
+    /*background-color: cadetblue;*/
+    background-image:url(../images/Fondo1.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.textbox {
+    width: 200px;
+} 
+
+body {
+    color: white;
+}
+
+div #titulo a {
+    color: white;
+    text-align: center;
+    margin: 20px 0px 20px 0px;
+}
+
+
+.v {
+    color: black;
+    padding-top: 15px;
+}
+
+.contenido {
+    background-color: white;
+    border-radius: 20px 20px 0px 0px;
+    width: 60%;
+    margin: auto;
+    height: 250px;
+}
+
+    .contenido h2 {
+        margin: 15px;
+        text-align: center;
+    }
+.h2 {
+    margin: 15px;
+    text-align: center;
+}
+footer p {
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    width: 60%;
+    margin: auto;
+    border-radius: 0px 0px 20px 20px;
+    opacity: 0.9;
+}
+
+.contenido .botones {
+    text-align: center;
+}
+
+    .contenido .botones input[type=submit] {
+        font-size: 18px;
+        height: 50px;
+        width: 250px;
+        border-radius: 20px;
+    }
+
+.nav {
+    height: 40px;
+    border-bottom: 1px solid #247eb0;
+}
+
+    .nav h3 {
+        color: #247eb0;
+        margin: 5px 0;
+        float: left;
+        width: 200px;
+    }
+
+    .nav nav {
+        width: calc(100% - 200px);
+        float: right;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+    }
+
+    .nav ul li {
+        float: left;
+    }
+
+    .nav nav a {
+        display: inline-block;
+        padding: 5px 7px;
+        height: 25px;
+        background-color: #247eb0;
+        color: white;
+        margin: 0;
+        font-family: Tahoma;
+        font-size: 12pt;
+        text-align: center;
+        line-height: 25px;
+        text-decoration: none;
+    }
+
+        .nav nav a:hover {
+            color: #ffc82f;
+        }
+
+    .nav ul li input[type=search] {
+        padding: 3px 3px 3px 25px;
+        margin: 5px 0;
+        width: 300px;
+    }
+
+        .nav ul li input[type=search]:empty {
+            background: url(imgs/search.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+.list {
+    margin: 15px 0;
+}
+
+    .list ul {
+        padding: 5;
+        margin: auto;
+        list-style: none;
+    }
+
+    .list li {
+        width: 150px;
+        float: left;
+        margin: 0 18px 18px 0;
+        height: 130px;
+        text-align: center;
+    }
+
+        .list li:nth-child(6n) {
+            margin-right: 5px;
+        }
+
+    .list a {
+        text-decoration: none;
+        color: #247eb0;
+        font-size: 10pt;
+        margin: auto;
+    }
+
+    .list li img {
+        width: 150px;
+        max-width: 140px;
+        max-height: 80px;
+        overflow: hidden;
+        border: 5px solid white;
+        outline: 2px solid gainsboro;
+        margin: auto;
+    }
+
+.contenido .botones input[type=submit]:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.registrar {
+}
+
+    .registrar header h1 {
+        font-size: 30px;
+        text-align: center;
+        margin: 15px 0px;
+    }
+
+    .registrar h2, h4 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .registrar h4 {
+        padding-top: 10px;
+    }
+
+    .registrar form {
+        background-color: white;
+        color: black;
+        border-radius: 20px;
+        width: 70%;
+        margin: auto;
+        height: 500px;
+        font-weight: bold;
+    }
+
+    .registrar fieldset {
+        margin: 0px 10px;
+    }
+
+        .registrar fieldset label, input {
+            margin: 3px 2px;
+        }
+
+.b {
+    width: 100%;
+}
+
+.registrar div {
+    text-align: center;
+}
+
+.boton {
+    font-size: 15px;
+    height: 30px;
+    width: auto;
+    border-radius: 5px;
+}
+
+    .boton:hover {
+        background-color: black;
+        color: white;
+    }
+
+.registrar p {
+    text-align: center;
+}
+
+
+.is {
+    
+    background-color: white;
+    width: 70%;
+    height: 300px;
+    margin: auto;
+    color: black;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+    .is form {
+        padding-top: 20px;
+    }
+
+    .is input[type=email], input[type=password] {
+        width: 70%;
+    }
+
+.admin {
+    background-color:white;
+    text-align:center;
+    margin:10px auto;
+    width:60%;
+    height:40%;
+    border-radius: 20px 20px 0px 0px;
+    opacity:0.9;
+}
+.admin a, h1,h3
+{
+    color:black;
+}
+
+.admin a{
+    font-weight:bold;
+}
+
+.admin h1
+{
+    padding-top:20px;
+}
+
+.admin h3
+{
+    font-size:28px;
+}
+
+.admin input[type=password], input[type=number]
+{
+    width:300px;
+}
+
+#tablas {
+    background-color: white;
+    text-align: center;
+    margin: 10px auto;
+    width: 60%;
+    height: 60%;
+    border-radius: 20px 20px 0px 0px;
+    opacity: 0.9;
+    color:black;
+}
+
+    #tablas tr td a {
+        color: black;
+        text-decoration:none;
+        
+    }
+    #tablas tr td a:hover{
+        color:steelblue;
+    }
+
+
+#tablas tr td {
+    border-bottom: 1px solid black;
+}
+
+.listaT{
+    text-align:center;
+    color:white;
+}
+
+main .a{
+    color:white;
+}
+
+.centrado {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration-color:white
+}
+.padre {
+    background-color: #fafafa;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    /* IMPORTANTE */
+    text-align: center;
+}
+fieldset {
+    background-color: red;
+}
+p {
+    line-height: 1.4;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+}
+
+    a:link {
+        color: #848b8c;
+    }
+
+    a:visited {
+        color: #848b8c;
+    }
+
+    a:focus {
+        border-bottom: 1px solid;
+        background: #98d6e4;
+    }
+
+    a:hover {
+        border-bottom: 1px solid;
+        background: #98d6e4;
+    }
+
+    a:active {
+        background: #98d6e4;
+        color: #CDFEAA;
+    }
+.container{
+
+    flex-direction: column;
+}
+.center-h {
+    justify-content: center;
+}
+
+.center-v {
+    align-items: center;
+}

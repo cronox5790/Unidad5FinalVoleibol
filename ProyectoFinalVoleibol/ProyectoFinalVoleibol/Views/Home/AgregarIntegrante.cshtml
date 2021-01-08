@@ -1,0 +1,85 @@
+﻿
+
+@model ProyectoFinalVoleibol.Models.ViewModels.IntegrantesVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ Layout = "_Layout"; }
+<main>
+    <section class="listaT">
+        <h1 class="display-4">Administración de Integrantes</h1>
+      
+        <form method="post" action="~/Home/AgregarIntegrante" enctype="multipart/form-data">
+            <fieldset style="background-color:gray; opacity:.8; border-radius:20px; ">
+                <h2>Añadir Integrante</h2>
+                <label id="labels"><b>Clave del director técnico:</b></label> 
+                
+                <input id="txtdisplay" type="number" asp-for="Directortecnico.Clave" readonly />
+                <br />
+                <label id="editar"><b>Nombre:</b></label>
+                <input type="text" asp-for="Integrantes.Nombre" required />
+                <br />
+                <label id="editar"><b>Género:</b></label>
+                <input type="text" asp-for="Integrantes.Genero" required />
+                <br />
+                <label id="editar"><b>Edad:</b></label>
+                <input type="number" asp-for="Integrantes.Edad" required />
+                <br />
+                <label id="editar"><b>Número de jugador:</b></label>
+                <input type="number" asp-for="Integrantes.NumCamiseta" required />
+                <br />
+                <label id="editar"><b>Posición:</b></label>
+                <input type="text" asp-for="Integrantes.Posicion" required />
+                <br />
+                <label id="editar"><b>Titular/Suplente:</b></label>
+                <input type="text" asp-for="Integrantes.Estado" required />
+                <br />
+                <h1><b>Estadisticas del jugador:</b></h1>
+                <br />
+                <label id="editar"><b>Fueza:</b></label>
+                <input type="number" asp-for="Integrantes.Fuerza" required />
+                <br />
+                <label id="editar"><b>Remate:</b></label>
+                <input type="number" asp-for="Integrantes.Remate" required />
+                <br />
+                <label id="editar"><b>Recepción:</b></label>
+                <input type="number" asp-for="Integrantes.Recepcion" required />
+                <br />
+                <label id="editar"><b>Bloqueo:</b></label>
+                <input type="number" asp-for="Integrantes.Bloqueo" required />
+                <br />
+                <label id="editar"><b>Salto:</b></label>
+                <input type="number" asp-for="Integrantes.Salto" required />
+                <br />
+                <label id="editar"><b>Saque:</b></label>
+                <input type="number" asp-for="Integrantes.Saque" required />
+                <br />
+
+
+                <label>Imagen:</label>
+                <input type="file" id="fileUpload1" accept="image/jpg" asp-for="Archivo" onchange="mostrarImagen(this)" required />
+                <br />
+                <img id="imagePreview" src="~/images/no-disponible.png" alt="Vista previa de la imagen" />
+                <br />
+                <input class="boton" type="submit" value="Añadir Integrante" /> <br />
+                <p style="text-align:left; margin:20px 0">
+                    <a href="javascript:window.history.back()">Regresar</a>
+                </p>
+            </fieldset>
+        </form>
+        <p>
+            @Html.ValidationSummary()
+        </p>
+    </section>
+
+</main>
+<script>
+    function mostrarImagen(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("imagePreview").src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>

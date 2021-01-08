@@ -1,0 +1,37 @@
+﻿@model ProyectoFinalVoleibol.Models.ViewModels.DtVM
+
+@{ Layout = "_LayoutEquipos"; }
+<body>
+    <section class="listaT">
+        <h1>Miembros del equipo</h1>
+        <h1 id="NombreEquipo">@Model.DirT</h1>
+        
+        </section>
+        <section class="listaT">
+
+
+            @foreach (var item in Model.Integrantes)
+            {
+                <ul class="list">
+
+                    <li>
+                        <a href="/Home/InfoEquipo/@item.Nombre.Replace(" ","-")">
+
+                            <h2>@item.Nombre</h2>
+                            <br />
+                            <img src="~/images/@(item.Id)_0.jpg"/>
+                            <br />
+                        </a>
+
+                        <label><b>Número de camiseta:</b></label>
+                        <h2 id="NCamiseta">@item.NumCamiseta</h2>
+                        <label><b>Posición:</b></label>
+                        <h2 id="Posicion">@item.Posicion</h2>
+
+                    </li>
+                </ul>
+
+            }
+
+        </section>
+</body>

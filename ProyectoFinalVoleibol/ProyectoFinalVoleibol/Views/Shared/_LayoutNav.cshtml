@@ -1,0 +1,35 @@
+﻿@inject ProyectoFinalVoleibol.Services.MenuServices servicio
+<html>
+<head>
+    <title>Integrantes del equipo</title>
+    <link href="~/css/Estilos.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <div align="center"><img src="~/images/logo4al.png" /> </div>
+    </header>
+    <section class="nav">
+        <div class="list">
+            <nav>
+                <a href="~/Home/VentanaP/">Inicio </a>
+
+                @foreach (var item in servicio.DirTec)
+                {
+    <a href="~/@item.Equipo">@item.Equipo </a>}
+
+            </nav>
+        </div>
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer>
+            <p>
+                © 2021 All rights reserved | Design by Roberto, Luis Antonio y Carlos
+            </p>
+        </footer>
+    </section>
+</body>
+</html>

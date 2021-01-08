@@ -1,0 +1,56 @@
+﻿@model ProyectoFinalVoleibol.Models.ViewModels.IntegrantesVM
+@{ Layout = "_Layout";
+    var integrantes = Model.Integrantes; }
+
+
+
+<section class="listaT">
+    <h2 id="nombre">@integrantes.Nombre</h2>
+
+    <img src="~/images/@(integrantes.Id)_0.jpg" width="200" height="250" />
+</section>
+
+<section class="descripcion" id="descripcion">
+</section>
+
+
+
+<section class="listaT">
+    <fieldset style="background-color:gray; opacity:.8; border-radius:20px; ">
+        <label>Nombre:</label>
+        @integrantes.Nombre
+        <br />
+        <label>Número de camiseta:</label>
+        @integrantes.NumCamiseta
+        <br />
+        <label>Posición:</label>
+        @integrantes.Posicion
+        <br />
+        <br />
+        <label>Género:</label>
+        @integrantes.Genero
+        <br />
+        <label>Estado:</label>
+        @integrantes.Estado
+        <br />
+        <label>Fuerza:</label>
+        @integrantes.Fuerza
+        <br />
+        <label>Recepción:</label>
+        @integrantes.Recepcion
+        <br />
+        <label>Remate:</label>
+        @integrantes.Remate
+        <br />
+        <label>Salto:</label>
+        @integrantes.Salto
+        <br />
+        <label>Saque:</label>
+        @integrantes.Saque
+        <br />
+    </fieldset>
+</section>
+
+<br />
+
+<a href="javascript:history.back();" class="boton"><b>Regresar</b></a>

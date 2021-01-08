@@ -1,0 +1,46 @@
+﻿@model ProyectoFinalVoleibol.Models.Directortecnico
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ Layout = "_Layout"; }
+<main>
+    <section >
+       
+        <form class="listaT" method="post" action="~/Home/EditarDt">
+            <h1>Modificar información del director técnico</h1>
+            <fieldset style="background-color:gray; opacity:.8; border-radius:20px; ">
+                <input type="hidden" asp-for="Id" />
+                <br />
+                <label id="labels"><b>Clave del director técnico:</b></label>
+                <input id="txtdisplay" type="number" asp-for="Clave" required readonly />
+                <br />
+                <label id="editar"><b>Nombre completo:</b></label>
+                <input type="text" asp-for="Nombre" required />
+                <br />
+                <label id="editar"><b>Equipo:</b></label>
+                <input type="text" asp-for="Equipo" readonly />
+                <br />
+                <label id="editar"><b>Nacionales Ganados:</b></label>
+                <input type="number" asp-for="NacionalesGanados" required />
+                <br />
+                <label id="editar"><b>Nacionales Perdidos:</b></label>
+                <input type="number" asp-for="NacionalesPerdidos" required />
+                <br />
+                <label id="editar"><b>Internacionales Ganados:</b></label>
+                <input type="number" asp-for="InternacionalesGanados" required />
+                <br />
+                <label id="editar"><b>Internacionales Perdidos:</b></label>
+                <input type="number" asp-for="InternacionalesPerdidos" required />
+                <br />
+                <label id="editar"><b>Selección:</b></label>
+                <input type="text" asp-for="Seleccion" readonly />
+                <br />
+                <label id="editar"><b>Sala/Playero:</b></label>
+                <input type="text" asp-for="Tipo" required />
+                <br />
+            </fieldset>
+            @Html.ValidationSummary()
+            <input class="boton"  type="submit" value="Modificar" />
+            <a href="~/Home/ListaDeDt"><b>Cancelar</b></a>
+        </form>
+        
+    </section>
+</main>

@@ -1,0 +1,17 @@
+﻿@model ProyectoFinalVoleibol.Models.Administrador
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ Layout = "_Layout"; }
+<main>
+    <section class="admin">
+        <h1>Accediendo como Administrador</h1>
+        <a href="~/Home/DtInicioSesion">QUIERO ACCEDER COMO DIRECTOR TÉCNICO </a>
+        <form method="post" action="~/Home/AdminIS">
+            <input type="number" asp-for="Clave" placeholder="Clave" required />
+            <br />
+            <input type="password" asp-for="Contrasena" placeholder="Contraseña" required />
+            <br />
+            <input class="boton" type="submit" value="Acceder como Administrador" />
+            @Html.ValidationSummary()
+        </form>
+    </section>
+</main>

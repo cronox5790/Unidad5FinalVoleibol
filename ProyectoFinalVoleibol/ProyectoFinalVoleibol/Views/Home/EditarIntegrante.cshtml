@@ -1,0 +1,75 @@
+﻿@model ProyectoFinalVoleibol.Models.ViewModels.IntegrantesVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ Layout = "_Layout"; }
+
+
+<form class="listaT" method="post" action="~/Home/Editarintegrante" enctype="multipart/form-data">
+    <fieldset style="background-color:gray; opacity:.8; border-radius:20px; ">
+        <h2>Editar Integrantes</h2>
+        <input type="hidden" asp-for="Integrantes.Id" />
+        <br />
+        <label id="editar"><b>Nombre completo:</b></label>
+        <input type="text" asp-for="Integrantes.Nombre" required />
+        <br />
+        <label id="editar"><b>Género:</b></label>
+        <input type="text" asp-for="Integrantes.Genero" readonly />
+        <br />
+        <label id="editar"><b>Edad:</b></label>
+        <input type="number" asp-for="Integrantes.Edad" required />
+        <br />
+        <label id="editar"><b>Número de jugador:</b></label>
+        <input type="number" asp-for="Integrantes.NumCamiseta" required />
+        <br />
+        <label id="editar"><b>Posición:</b></label>
+        <input type="text" asp-for="Integrantes.Posicion" required />
+        <br />
+        <label id="editar"><b>Titular/Suplente:</b></label>
+        <input type="text" asp-for="Integrantes.Estado" required />
+        <br />
+        <h1><b>Estadisticas del jugador:</b></h1>
+        <br />
+        <label id="editar"><b>Fueza:</b></label>
+        <input type="number" asp-for="Integrantes.Fuerza" required />
+        <br />
+        <label id="editar"><b>Remate:</b></label>
+        <input type="number" asp-for="Integrantes.Remate" required />
+        <br />
+        <label id="editar"><b>Recepción:</b></label>
+        <input type="number" asp-for="Integrantes.Recepcion" required />
+        <br />
+        <label id="editar"><b>Bloqueo:</b></label>
+        <input type="number" asp-for="Integrantes.Bloqueo" required />
+        <br />
+        <label id="editar"><b>Salto:</b></label>
+        <input type="number" asp-for="Integrantes.Salto" required />
+        <br />
+        <label id="editar"><b>Saque:</b></label>
+        <input type="number" asp-for="Integrantes.Saque" required />
+        <br />
+        <label><b>Imagen:</b></label>
+        <br />
+        <img id="imagePreview" src="~/images/@Model.Imagen" alt="Vista previa de la imagen" />
+        <br />
+        <input type="file" id="fileUpload1" accept="image/jpg" onchange="mostrarImagen(this)" asp-for="Archivo" />
+    </fieldset>
+
+    <p>
+        @Html.ValidationSummary()
+    </p>
+    <input class="boton" type="submit" value="Modificar" />
+    <p style="text-align:center; margin:20px 0">
+        <a href="javascript:window.history.back()"><b>Regresar</b></a>
+    </p>
+</form>}
+<script>
+    function mostrarImagen(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.querySelector('#imagePreview').src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>

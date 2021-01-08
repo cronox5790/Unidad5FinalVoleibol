@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ProyectoFinalVoleibol.Models.Directortecnico>
+@{ Layout = "_LayoutAdmin"; }
+<main>
+    <div>
+        <h1 class="listaT">Lista de directores técnicos</h1>
+    </div>    
+    <section>
+        <form class="centrado">
+            <a href="~/Home/AltaDirTecnicos"><b>Dar de alta a director técnico</b></a>
+
+
+            <table id="tablas">
+                <thead>
+                    <tr>
+                        <th>Clave director tecnico</th>
+                        <th>Nombre</th>
+                        <th>Equipo</th>
+                        <th>Integrantes</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var directortecnico in Model)
+                    {
+        <tr>
+
+            <td>@directortecnico.Clave</td>
+
+            <td>@directortecnico.Nombre</td>
+
+            <td>@directortecnico.Equipo</td>
+
+
+            <td>
+                <a href="~/Home/ListaDeIntegrantes/@directortecnico.Id">Integrantes del equipo</a>
+            </td>
+
+            <td>
+                <a href="~/Home/EditarDt/@directortecnico.Id">Editar</a>
+            </td>
+            <td>
+                <a href="~/Home/CambiarClaveDt/@directortecnico.Id">Cambiar contraseña</a>
+            </td>
+
+        </tr>}
+                </tbody>
+            </table>
+            <a id="a" href="~/Home/IndexAdminDt"><b>Regresar</b></a>
+        </form>
+    </section>
+
+
+        <form method="post" action="~/Home/EstadoDirTec">
+            <input type="number" id="idMaestro" name="Id" hidden />
+        </form>
+        <script>
+            function cambiar(id) {
+                document.getElementById("idDt").value = id;
+                document.querySelector("form").submit();
+            }</script>
+   
+</main>
